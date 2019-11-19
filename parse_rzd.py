@@ -8,13 +8,13 @@ import time, re
 import winsound
 import pyautogui
 ur = ""
-class Hui:
+class ZD:
     def __init__(self,fromInput,fromOutput,date):
         self.fromInput=fromInput
         self.fromOutput=fromOutput
         self.date=date
         
-    def trt(self):
+    def poisk(self):
         global ur
         driver = webdriver.Chrome()
         driver.implicitly_wait(30)
@@ -49,6 +49,8 @@ class Hui:
         time.sleep(0.4)
         button.click()
         ur=driver.current_url
+        time.sleep(0.5)
+        driver.quit()
         return(ur)
         
 

@@ -1,24 +1,19 @@
 import telebot
-from pgiarse_rzd import *
+from parse_rzd import *
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui port Select
+from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 import time, re
 import winsound
 import pyautogui
-
-print('new feature bot launched')
-
-
-print('Bot launching')
-
 bot = telebot.TeleBot("955705841:AAH2Pj9QrLas4Nk_UFWy4sh5swl05n2AKOU")
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True, True)
 keyboard2 = telebot.types.ReplyKeyboardMarkup(True, True)
 keyboard3 = telebot.types.ReplyKeyboardMarkup(True, True)
 keyboard4 = telebot.types.ReplyKeyboardMarkup(True, True)
+keyboardOk= telebot.types.ReplyKeyboardMarkup(True, True)
 
 keyboard1.row('Москва','Санкт-петербург')
 keyboard1.row('Казань','Набережные Челны')
@@ -39,6 +34,8 @@ keyboard4.row('Нижнекамск','Новосибирск')
 keyboard4.row('Кострома','Красноярск')
 keyboard4.row('Ханты-Мансийск','Якутск')
 keyboard4.row('Другой')
+
+keyboardOk.row("Поиск")
 
 
 @bot.message_handler(commands=['start'])
@@ -172,18 +169,21 @@ def send_text(message):
 			kusokgovna = 1
 			redip = 5
 	if redip == 5:
-		bot.send_message(message.chat.id, message.text)
+		bot.send_message(message.chat.id, message.text,reply_markup=keyboardOk)
 		kogda = message.text
 		redip = 7
 
-# @bot.message_handler(content_types=['text'])
+# @bot.message_handler(content_types=['text']
 # def send_text2(message):
-	if message.text.lower() ==   'какие города?':
+	if message.text.lower() ==   'поиск':
 		bot.send_message(message.chat.id, otkuda)
 		bot.send_message(message.chat.id, kuda)
 		bot.send_message(message.chat.id, kogda)
-		bot.send_message(message.chat.id,(Hui(otkuda,kuda,kogda).trt()))
-
+		bot.send_message(message.chat.id,"Ж\д маршруты по вашим требованиям:"+(ZD(otkuda,kuda,kogda).poisk()))
+		#bot.send_message(message.chat.id,"Авиамаршруты по вашим требованиям:"+(Avia(otkuda,kuda,kogda).poisk()))
+		#bot.send_message(message.chat.id,"Наиболее дешёвый поезд:")
+		#bot.send_message(message.chat.id,"Наиболее дешёвый авиарейс в"+...+"часов")
+		#bot.send_message(message.chat.id,"Затраты на бензин при езде на собственном авто:")
 
 
 
