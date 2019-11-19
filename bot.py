@@ -169,9 +169,9 @@ def send_text(message):
 			kusokgovna = 1
 			redip = 5
 	if redip == 5:
-		bot.send_message(message.chat.id, message.text,reply_markup=keyboardOk)
 		kogda = message.text
 		redip = 7
+		bot.send_message(message.chat.id, message.text,reply_markup=keyboardOk)
 
 # @bot.message_handler(content_types=['text']
 # def send_text2(message):
