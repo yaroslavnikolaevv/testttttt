@@ -9,6 +9,9 @@ import time, re
 import winsound
 import pyautogui
 
+print('new feature bot launched')
+
+
 print('Bot launching')
 
 bot = telebot.TeleBot("955705841:AAH2Pj9QrLas4Nk_UFWy4sh5swl05n2AKOU")
