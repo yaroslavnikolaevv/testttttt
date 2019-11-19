@@ -8,6 +8,9 @@ from selenium.common.exceptions import NoSuchElementException
 import time, re
 import winsound
 import pyautogui
+
+print('Bot launching')
+
 bot = telebot.TeleBot("955705841:AAH2Pj9QrLas4Nk_UFWy4sh5swl05n2AKOU")
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True, True)
 keyboard2 = telebot.types.ReplyKeyboardMarkup(True, True)
