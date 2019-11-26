@@ -1,4 +1,7 @@
 import telebot
+import apiai
+import json
+
 
 bot = telebot.TeleBot("1051308879:AAESC8UYi9Q9SI6QIJuXhq-nlz9dYWoRe1c")
 
