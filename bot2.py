@@ -16,7 +16,7 @@ def start_message(message):
     answer = str(response['result']['fulfillment']['speech']) 
     if answer != '': 
        bot.send_message(message.chat.id, answer) 
-       bot.register_next_step_handler(message, send_message23) 
+       bot.register_next_step_handler(message, start_message) 
     elif message.text == 'Назад': 
        bot.send_message(message.chat.id, 'Хорошо\nВыбирите что хотите?', reply_markup=main_markup(message) 
        ) 
